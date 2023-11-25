@@ -13,12 +13,14 @@ async def fetch_temp(registry):
         temperatures = psutil.sensors_temperatures()
         if not temperatures:
             logger.info("温度情報は利用できません。")
+            cpu_temp_gauge = Gauge('cpu_temperature', 'Temperature of the CPU', ['sensor'], registry=registry)
             return None
         for name, entries in temperatures.items():
             for entry in entries:
                 cpu_temp_gauge = Gauge('cpu_temperature', 'Temperature of the CPU', ['sensor'], registry=registry)
                 cpu_temp_gauge.labels(sensor=name).set(entry.current)
                 logger.info(f"{name}: {entry.current}°C")
+                return f"{name}: {entry.current}°C"
     except Exception as e:
         logger.error(f"温度取得時にエラーが発生しました: {e}")
 
