@@ -2,7 +2,7 @@ DOCKERFILE_PATH = .
 
 IMAGE_NAME = temperature-exporter
 
-VERSION = 1.0.0
+VERSION = 1.1.0
 
 REGISTRY = abeyuki
 
