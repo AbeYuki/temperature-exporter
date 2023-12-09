@@ -25,7 +25,7 @@ docker run -itd -p 8000:8000 abeyuki/teperature-exporter:latest
 kubectl create deployment temperature-exporter --image=abeyuki/temperature-exporter --port=8000
 ```
 
-## eporter path
+## exporter path
 
 ```
 curl http://127.0.0.1:8000/metrics
