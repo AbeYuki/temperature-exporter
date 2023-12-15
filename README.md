@@ -7,7 +7,7 @@ Raspberry Pi の CPU 温度を取得する exporter
 ```
 HOST_IP=192.168.1.1
 ```
-環境変数で アプリケーションの port を指定できる
+環境変数で アプリケーションの port を指定できる  
 デフォルトは 8000
 ```
 PORT=9101
@@ -25,7 +25,7 @@ docker run -itd -p 8000:8000 abeyuki/teperature-exporter:latest
 kubectl create deployment temperature-exporter --image=abeyuki/temperature-exporter --port=8000
 ```
 
-## eporter path
+## exporter path
 
 ```
 curl http://127.0.0.1:8000/metrics
